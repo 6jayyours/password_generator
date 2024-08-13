@@ -7,7 +7,7 @@ export const registerUser = createAsyncThunk(
   'user/registerUser',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/users/register', userData, {
+      const response = await axios.post('https://pass-gen-backend-production.up.railway.app/api/v1/users/register', userData, {
         headers: { 'Content-Type': 'application/json' },
       });
       return response.data;
@@ -21,7 +21,7 @@ export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/users/login', userData, {
+      const response = await axios.post('https://pass-gen-backend-production.up.railway.app/api/v1/users/login', userData, {
         headers: { 'Content-Type': 'application/json' },
       });
       return response.data;
@@ -46,7 +46,7 @@ export const savePassword = createAsyncThunk(
   'password/savePassword',
   async (passwordData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/users/savepass', passwordData, {
+      const response = await axios.post('https://pass-gen-backend-production.up.railway.app/api/v1/users/savepass', passwordData, {
         headers: { 'Content-Type': 'application/json' },
       });
       return response.data; // Expecting { passwords: [...] } or directly an array
