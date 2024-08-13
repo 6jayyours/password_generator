@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCopy, FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const PasswordCard = ({ password }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -7,6 +8,7 @@ const PasswordCard = ({ password }) => {
   // Function to copy the password to clipboard
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
+    toast.success("Password copied");
   };
 
   // Toggle password visibility

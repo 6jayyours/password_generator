@@ -85,6 +85,11 @@ const PasswordGenerator = () => {
       });
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(password);
+    toast.success("Password copied");
+  };
+
   return (
     <div className="py-8 px-6 bg-white rounded-2xl shadow-lg mx-auto w-[800px]">
       <h1 className="text-3xl font-extrabold mb-4 text-center">Password Generator</h1>
@@ -96,7 +101,7 @@ const PasswordGenerator = () => {
         <div className="flex space-x-2">
           <button
             className="text-violet-500 hover:text-violet-700 transition-colors"
-            onClick={() => navigator.clipboard.writeText(password)}
+            onClick={copyToClipboard}
           >
             <FaCopy size={24} />
           </button>
